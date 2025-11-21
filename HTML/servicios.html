@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Servicios - CLINAID</title>
+  
+  <!-- FontAwesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- CSS principal -->
+  <link rel="stylesheet" href="../CSS/servicios.css">
+</head>
+
+<body>
+  <!-- ======================== HEADER ======================== -->
+  <header class="site-header">
+    <div class="header-inner">
+      
+      <!-- LOGO DE LA CLÍNICA -->
+      <div class="logo">
+        <a href="../HTML/index.html"><img src="../Imagenes/logoClinaid.png" alt="Logo CLINAID" class="logo-img"></a>
+      </div>
+
+            <!-- BARRA DE BÚSQUEDA -->
+      <div class="search" id="search-wrapper">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Buscar..."
+          aria-label="Buscar"
+          aria-autocomplete="list"
+          aria-controls="search-suggestions"
+          aria-expanded="false"
+          autocomplete="off"
+        >
+        
+        <button id="search-btn" aria-label="Buscar">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+
+        <!-- Lista de sugerencias -->
+        <ul id="search-suggestions" role="listbox" class="suggestions"></ul>
+      </div>
+
+
+      <!-- BOTÓN DE MENÚ -->
+      <div class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+
+      <!-- MENÚ DE NAVEGACIÓN PRINCIPAL -->
+      <nav class="nav" id="nav">
+        <ul>
+          <li><a href="../HTML/index.html" class="nav-link">Inicio</a></li>
+          <li><a href="../HTML/sobreNosotros.html" class="nav-link">Sobre Nosotros</a></li>
+          <li><a href="../HTML/testimonios.html" class="nav-link">Testimonios</a></li>
+          <li><a href="../HTML/servicios.html" class="nav-link">Servicios</a></li>
+          <li><a href="../HTML/index.html#contactanos" class="nav-link">Contáctanos</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ======================== BANNER SERVICIOS ======================== -->
+  <section class="hero-servicios">
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <h1>Nuestros Servicios</h1>
+        <p>Atención integral especializada en dolor y cuidados paliativos</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== SECCIÓN: SERVICIOS PRINCIPALES ======================== -->
+  <section class="servicios-principales">
+    <div class="container-servicios">
+      <div class="intro-servicios">
+        <div class="icono-titulo">
+          <i class="fa-solid fa-briefcase-medical"></i>
+          <h2>Servicios</h2>
+        </div>
+      </div>
+
+      <!-- Grid de Servicios -->
+      <div class="servicios-grid">
+        
+        <!-- Servicio 1 -->
+        <article class="servicio-item">
+          <div class="servicio-icono">
+            <i class="fa-solid fa-user-doctor"></i>
+          </div>
+          <h3>Consulta Externa Especializada en Dolor y Cuidados Paliativos</h3>
+          <p>
+            Valoración de pacientes ambulatorios con dolor crónico benigno, dolor oncológico y cuidado paliativo.
+          </p>
+          <p class="detalle-adicional">
+            <strong>Duración:</strong> Primera vez 30 minutos, controles 20 minutos.
+          </p>
+          <div class="destacado">
+            <i class="fa-solid fa-certificate"></i>
+            <p>Contamos con el único especialista de la región certificado por el instituto mundial del Dolor FIPP, WIP.</p>
+          </div>
+        </article>
+
+        <!-- Servicio 2 -->
+        <article class="servicio-item">
+          <div class="servicio-icono">
+            <i class="fa-solid fa-syringe"></i>
+          </div>
+          <h3>Consulta Externa Especializada de Anestesiología</h3>
+          <p>
+            Valoración preanestésica de pacientes ambulatorios.
+          </p>
+        </article>
+
+        <!-- Servicio 3 -->
+        <article class="servicio-item">
+          <div class="servicio-icono">
+            <i class="fa-solid fa-hand"></i>
+          </div>
+          <h3>Consulta Externa Especializada de Cirugía de Mano</h3>
+          <p>
+            Consulta especializada Cirugía de Mano y Miembro Superior, valoración integral a problemas degenerativos de la mano.
+          </p>
+        </article>
+
+        <!-- Servicio 4 -->
+        <article class="servicio-item">
+          <div class="servicio-icono">
+            <i class="fa-solid fa-heartbeat"></i>
+          </div>
+          <h3>Intervencionismo Analgésico</h3>
+          <p>
+            Procedimientos intervencionistas con el fin de lograr alivio del dolor severo de cualquier origen, según criterio médico.
+          </p>
+          <p class="detalle-adicional">
+            Dichos procedimientos derivados de la consulta externa se realizarán en salas de cirugía o sala de procedimientos de dolor, según aplique con fluoroscopia o ecografía y radiofrecuencia (disponibilidad del equipo).
+          </p>
+          <p class="estadistica">
+            <i class="fa-solid fa-chart-line"></i>
+            Se estima el 25% a 30% de pacientes valorados en la consulta externa requerirán procedimientos analgésicos.
+          </p>
+        </article>
+
+        <!-- Servicio 5 -->
+        <article class="servicio-item">
+          <div class="servicio-icono">
+            <i class="fa-solid fa-pills"></i>
+          </div>
+          <h3>Servicio Farmacéutico</h3>
+          <p>
+            Medicamentos especializados para manejo del dolor y medicamentos de control especial.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== SECCIÓN: PROCEDIMIENTOS DE INTERVENCIONISMO (INTERCALADO + VER MÁS) ======================== -->
+  <section class="section-procedimientos">
+    <div class="procedimientos-container">
+        
+        <!-- Encabezado central -->
+        <div class="procedimientos-header">
+          <p class="subtitulo">Comprometidos con tu salud y bienestar</p>
+          <h2>Procedimientos de Intervencionismo</h2>
+        </div>
+
+        <!-- Bloque 1: Cabeza y Cara -->
+        <div class="procedimiento-categoria" data-modal-id="cabeza">
+          <div class="categoria-imagen">
+            <div class="imagen-contenedor">
+              <img src="../Imagenes/cara.jpeg" alt="Procedimientos Cabeza y Cara" loading="lazy">
+            </div>
+          </div>
+          <div class="categoria-contenido">
+            <div class="categoria-titulo">
+              <i class="fa-solid fa-check-circle"></i>
+              <h3>Cabeza y Cara</h3>
+            </div>
+            <ul class="lista-procedimientos">
+              <li>Bloqueo y Radiofrecuencia ganglio de Gasser y esfenopalatino.</li>
+              <li>Bloqueo y radiofrecuencia de Nervios glosofaríngeo y ramas terminales del trigémino.</li>
+              <li>Bloqueo y radiofrecuencia de Nervios Occipital mayor, menor y tercer nervio occipital.</li>
+            </ul>
+          </div>
+          
+        </div>
+
+        <!-- Bloque 2: Región Cervical -->
+        <div class="procedimiento-categoria" data-modal-id="cervical">
+          <div class="categoria-contenido">
+            <div class="categoria-titulo">
+              <i class="fa-solid fa-check-circle"></i>
+              <h3>Región Cervical</h3>
+            </div>
+            <ul class="lista-procedimientos">
+              <li>Inyección diagnóstica de ramo mediano dorsal.</li>
+              <li>Inyección epidural translaminar.</li>
+              <li>Inyección periradicular por ecografía.</li>
+              <li>Denervación por radiofrecuencia de ramo mediano dorsal.</li>
+              <li>Bloqueo simpático de ganglio estrellado.</li>
+            </ul>
+          </div>
+          <div class="categoria-imagen">
+            <div class="imagen-contenedor">
+              <img src="../Imagenes/cervicales.jpeg" alt="Región Cervical" class="imagen-irregular" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <!-- Bloque 3: Región Torácica y Lumbosacra -->
+        <div class="procedimiento-categoria" data-modal-id="toracica-lumbosacra">
+          <div class="categoria-imagen">
+            <div class="imagen-contenedor">
+              <img src="../Imagenes/lumbosacra3.jpeg" alt="Región Torácica y Lumbosacra" class="imagen-irregular" loading="lazy">
+            </div>
+          </div>
+          <div class="categoria-contenido">
+            <div class="categoria-titulo">
+              <i class="fa-solid fa-check-circle"></i>
+              <h3>Región Torácica y Lumbosacra</h3>
+            </div>
+            <ul class="lista-procedimientos">
+              <li>Inyección epidural translaminar y transforaminal.</li>
+              <li>Inyección diagnóstica de ramo mediano dorsal.</li>
+              <li>Inyección articulaciones facetarias.</li>
+              <li>Denervación por radiofrecuencia de ramo mediano dorsal.</li>
+              <li>Radiofrecuencia pulsada de Ganglio de la raíz Dorsal.</li>
+              <li>Discografía Diagnóstica.</li>
+              <li>Bloqueo simpático torácico o lumbares.</li>
+              <li>Bloqueo y denervación por radiofrecuencia de Nervios esplácnicos.</li>
+              <li>Bloqueo y neurolisis del plexo celiaco o hipogástrico.</li>
+              <li>Bloqueo y neurolisis del ganglio impar o Walter.</li>
+              <li>Adhesiolisis percutánea mecánica o química.</li>
+            </ul>
+            <button class="btn-ver-mas" data-modal-id="toracica-lumbosacra">
+              Ver más... <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Bloque 4: Miembro Superior y Mano -->
+        <div class="procedimiento-categoria" data-modal-id="mano">
+          
+          <div class="categoria-contenido">
+            <div class="categoria-titulo">
+              <i class="fa-solid fa-check-circle"></i>
+              <h3>Miembro Superior y Mano</h3>
+            </div>
+            <ul class="lista-procedimientos">
+              <li>Bloqueo de Nervio Periférico.</li>
+              <li>Inyección de agente anestésico.</li>
+              <li>Bloqueo nervios mediano, cubital y radial a nivel del antebrazo y muñeca.</li>
+              <li>Bloqueo de nervios palmares y digitales.</li>
+              <li>Bloqueo musculoesquelético de la mano y ligamentaria.</li>
+              <li>Viscosuplementación.</li>
+              <li>Plasma Rico en Plaquetas - PRP.</li>
+            </ul>
+          </div>
+          <div class="categoria-imagen">
+            <div class="imagen-contenedor">
+              <img src="../Imagenes/miembrosuperior.jpeg" alt="Miembro Superior y Mano" class="imagen-irregular" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <!-- Bloque 5: Dispositivos Implantables -->
+        <div class="procedimiento-categoria" data-modal-id="dispositivos">
+          <div class="categoria-imagen">
+            <div class="imagen-contenedor">
+              <img src="../Imagenes/implantables.jpeg" alt="Dispositivos Implantables" class="imagen-irregular" loading="lazy">
+            </div>
+          </div>
+          <div class="categoria-contenido">
+            <div class="categoria-titulo">
+              <i class="fa-solid fa-check-circle"></i>
+              <h3>Dispositivos Implantables</h3>
+            </div>
+            <ul class="lista-procedimientos">
+              <li>Implantación, programación y manejo de neuroestimulación espinal cervical, torácica y lumbar.</li>
+              <li>Implantación, programación y manejo de bombas programables para infusión de fármacos intratecales.</li>
+            </ul>
+            <div class="nota-medica">
+              <i class="fa-solid fa-info-circle"></i>
+              <strong>NOTA:</strong> Todos los dispositivos implantables son realizados por dos intervencionistas algesiologos debidamente titulados en el país, con instalaciones idóneas.
+            </div>
+            <button class="btn-ver-mas" data-modal-id="dispositivos">
+              Ver más... <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+          
+        </div>
+
+        <!-- Bloque 6: Musculoesquelético y Analgesia Regional -->
+        <div class="procedimiento-categoria" data-modal-id="musculoesqueletico">
+          
+          <div class="categoria-contenido">
+            <div class="categoria-titulo">
+              <i class="fa-solid fa-check-circle"></i>
+              <h3>Musculoesquelético y Analgesia Regional</h3>
+            </div>
+            <ul class="lista-procedimientos">
+              <li>Bloqueo y radiofrecuencia de nervios periféricos: supraescapular, occipital, ilioinguinal, intercostal, genitofemoral, safeno, geniculados, etc.</li>
+              <li>Colocación catéteres perineurales para infusión continua.</li>
+              <li>Inyección de articulaciones, bursas y uniones tendinosas de hombro, codo, cadera, rodilla.</li>
+              <li>Inyección y radiofrecuencia de articulación sacroilíaca.</li>
+              <li>Inyección musculo Piriforme.</li>
+              <li>Inyección de puntos miofasciales.</li>
+              <li>Inyección de toxina botulínica e fenolizaciones de puntos unión mioneural.</li>
+              <li>Bloqueo de cicatrices y neuroma.</li>
+              <li>Terapia regenerativa articular, columna vertebral, musculoesquelética – ligamentaria.</li>
+            </ul>
+            <button class="btn-ver-mas" data-modal-id="musculoesqueletico">
+              Ver más... <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+          <div class="categoria-imagen">
+            <div class="imagen-contenedor">
+              <img src="../Imagenes/interv.jpeg" alt="Musculoesquelético" class="imagen-irregular" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+    </div>
+  </section>
+
+  <!-- ======================== FOOTER ======================== -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-info">
+        <h2>Información de contacto</h2>
+        <img src="../Imagenes/logoClinaid.png" alt="Logo de la empresa" class="footer-logo">
+        <p><strong>Teléfono:</strong> (608)5152209 – 3244805510</p>
+        <p><strong>Correo:</strong> contacto@clinaid.com.co</p>
+        <p><strong>Dirección:</strong> Cra. 4B n 32-13 Plazoleta Fenalco B/ Cadiz – Ibagué, Tolima</p>
+
+        <div class="footer-social">
+          <a href="https://www.facebook.com/p/Clinaid-61566122693156/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/clinaid_/?hl=es" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.youtube.com/@CCLINAID" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://www.tiktok.com/@clinaid_" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-map">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7955.716861873345!2d-75.23010790642091!3d4.437447199999993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e38c5158fe5ec5b%3A0xc3b2ca6e7bc9c339!2sCLINAID%20Clinica%20de%20atenci%C3%B3n%20integral%20del%20dolor!5e0!3m2!1ses!2sco!4v1762050843963!5m2!1ses!2sco" 
+          width="100%" height="50%" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
+      </div>
+    </div>
+
+    <p>© 2025 - <span id="year"></span> CLINAID. Todos los derechos reservados.</p>
+  </footer>
+
+  <button id="btn-top" aria-label="Volver arriba">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <script src="../JS/servicios.js"></script>
+</body>
+</html>

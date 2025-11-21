@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sobre Nosotros - CLINAID</title>
+  
+  <!-- FontAwesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- CSS principal -->
+  <link rel="stylesheet" href="../CSS/sobreNosotros.css">
+</head>
+
+<body>
+  <!-- ======================== HEADER ======================== -->
+  <header class="site-header">
+    <div class="header-inner">
+      
+      <!-- LOGO DE LA CLÍNICA -->
+      <div class="logo">
+        <a href="../HTML/index.html"><img src="../Imagenes/logoClinaid.png" alt="Logo CLINAID" class="logo-img"></a>
+      </div>
+
+            <!-- BARRA DE BÚSQUEDA -->
+      <div class="search" id="search-wrapper">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Buscar..."
+          aria-label="Buscar"
+          aria-autocomplete="list"
+          aria-controls="search-suggestions"
+          aria-expanded="false"
+          autocomplete="off"
+        >
+        
+        <button id="search-btn" aria-label="Buscar">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+
+        <!-- Lista de sugerencias -->
+        <ul id="search-suggestions" role="listbox" class="suggestions"></ul>
+      </div>
+
+
+      <!-- BOTÓN DE MENÚ -->
+      <div class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+
+      <!-- MENÚ DE NAVEGACIÓN PRINCIPAL -->
+      <nav class="nav" id="nav">
+        <ul>
+          <li><a href="../HTML/index.html" class="nav-link">Inicio</a></li>
+          <li><a href="../HTML/sobreNosotros.html" class="nav-link">Sobre Nosotros</a></li>
+          <li><a href="../HTML/testimonios.html" class="nav-link">Testimonios</a></li>
+          <li><a href="../HTML/servicios.html" class="nav-link">Servicios</a></li>
+          <li><a href="../HTML/index.html#contactanos" class="nav-link">Contáctanos</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ======================== BANNER SOBRE NOSOTROS ======================== -->
+  <section class="hero-sobre">
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <h1>Sobre Nosotros</h1>
+        <p>Conoce quiénes somos, nuestros valores y compromiso con tu bienestar</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== SECCIÓN: QUIÉNES SOMOS ======================== -->
+  <section class="quienes-somos">
+    <div class="container-content">
+      <div class="content-texto">
+        <div class="icono-titulo">
+          <i class="fa-solid fa-users"></i>
+          <h2>¿Quiénes Somos?</h2>
+        </div>
+        
+        <div class="texto-expandible">
+          <div class="texto-preview">
+            <p>
+              Somos una empresa conformada por médicos especialistas y Subespecialistas entrenados, con alto nivel técnico, científico y humano, dedicados al desarrollo de medicina perioperatoria en el campo de Anestesiología y Reanimación, Clínica de Dolor, Cuidado Paliativo y Cirugía de Mano.
+            </p>
+          </div>
+          
+          <div class="texto-completo oculto" id="texto-quienes-somos">
+            <p>
+              Contamos con un equipo interdisciplinario con formación en otras especialidades médicas y disponemos de una visión humanística y de investigación en el área de la salud.
+            </p>
+            <p>
+              El dolor, no debe ser considerado como un síntoma aislado, debería tomarse como un síndrome que demanda grandes costos dentro de los sistemas de aseguramiento en salud a nivel mundial, la cual genera un gran impacto no solo económico, sino también familiar, social y laboral.
+            </p>
+            <p>
+              Esto se debe a la complejidad de su manejo, periodos de agudización, error en el diagnóstico que conlleva a fracaso en tratamientos farmacológicos, reacciones alérgicas, intolerancia y efectos adversos de medicamentos, compromiso psicológico, afectación del núcleo familiar y largas incapacidades laborales.
+            </p>
+            <p>
+              Es así donde contribuimos con los conocimientos y habilidades de diferentes especialidades con el fin de realizar un diagnóstico correcto y desarrollar la estrategia terapéutica más efectiva.
+            </p>
+          </div>
+          
+          <button class="btn-ver-mas" id="btn-quienes-somos">
+            <span class="texto-btn">Ver más</span>
+            <i class="fa-solid fa-chevron-down icono-btn"></i>
+          </button>
+        </div>
+      </div>
+      
+      <div class="content-imagen">
+        <div class="imagen-placeholder">
+          <img src="../Imagenes/equipoClinaid3.jpg" alt="Logo CLINAID" class="imagen-placeholder">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== SECCIÓN: MISIÓN Y VISIÓN ======================== -->
+  <section class="mision-vision">
+    <div class="container-grid">
+      
+      <!-- MISIÓN -->
+      <article class="card-mv">
+        <div class="icono-card">
+          <i class="fa-solid fa-bullseye"></i>
+        </div>
+        <h3>Misión</h3>
+        <p>
+          Proporcionamos atención integral y compasiva a pacientes en situación de dolor crónico y cuidados paliativos, con un enfoque centrado en el paciente, su familia y su calidad de vida.
+        </p>
+      </article>
+
+      <!-- VISIÓN -->
+      <article class="card-mv">
+        <div class="icono-card">
+          <i class="fa-solid fa-eye"></i>
+        </div>
+        <h3>Visión</h3>
+        <p>
+          Referentes de innovación, compasión y compromiso, líderes en la excelencia y la humanización de la atención en el alivio del dolor y la provisión de cuidados paliativos, marcando una diferencia significativa en la calidad de vida de nuestros pacientes y sus familias.
+        </p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ======================== SECCIÓN: PROMESA DE VALOR ======================== -->
+  <section class="promesa-valor">
+    <div class="container-content reverse">
+      <div class="content-imagen">
+        <div class="imagen-placeholder">
+          <img src="../Imagenes/promesaValor2.png" class="imagen-placeholder">
+
+        </div>
+      </div>
+      
+      <div class="content-texto">
+        <div class="icono-titulo">
+          <i class="fa-solid fa-handshake"></i>
+          <h2>Promesa de Valor</h2>
+        </div>
+        <p>
+          Brindar soluciones a problemas de salud, preferencialmente complejos, por medio de: conocimiento actualizado, trabajo en equipo e interdisciplinario, continuidad de la atención para lograr los mejores resultados clínicos a costos razonables y con una excelente experiencia de servicio.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== SECCIÓN: POLÍTICA DE CALIDAD ======================== -->
+  <section class="politica-calidad">
+    <div class="container-content">
+      <div class="content-texto">
+        <div class="icono-titulo">
+          <i class="fa-solid fa-award"></i>
+          <h2>Política de Calidad</h2>
+        </div>
+        
+        <div class="texto-expandible">
+          <div class="texto-preview">
+            <p>
+              Garantizamos un Servicio de salud con estricto cumplimiento de los Requisitos legales vigentes, con los principios de responsabilidad y ética, cumplimiento de los requisitos de los Sistemas de Gestión de la Calidad, Seguridad y Salud en el trabajo, medio ambiente, buenas prácticas de medicas y garantías en la seguridad del paciente, para la satisfacción de nuestros usuarios.
+            </p>
+          </div>
+          
+          <div class="texto-completo oculto" id="texto-politica">
+            <p>
+              Contamos con un Recurso Humano competente y confiable, una infraestructura adecuada y proveedores idóneos para lograr el mejoramiento continuo.
+            </p>
+          </div>
+          
+          <button class="btn-ver-mas" id="btn-politica">
+            <span class="texto-btn">Ver más</span>
+            <i class="fa-solid fa-chevron-down icono-btn"></i>
+          </button>
+        </div>
+      </div>
+      
+      <div class="content-imagen2">
+        <div class="imagen-placeholder2">
+          <img src="../Imagenes/certificado.jpg" class="imagen-placeholder2" >
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== SECCIÓN: VALORES ======================== -->
+  <section class="valores">
+    <div class="container-valores">
+      <h2>Nuestros Valores</h2>
+      
+      <div class="valores-grid">
+        <div class="valor-item">
+          <div class="valor-icono">
+            <i class="fa-solid fa-heart"></i>
+          </div>
+          <h4>Compasión</h4>
+        </div>
+        
+        <div class="valor-item">
+          <div class="valor-icono">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <h4>Responsabilidad</h4>
+        </div>
+        
+        <div class="valor-item">
+          <div class="valor-icono">
+            <i class="fa-solid fa-hands-holding-circle"></i>
+          </div>
+          <h4>Ética</h4>
+        </div>
+        
+        <div class="valor-item">
+          <div class="valor-icono">
+            <i class="fa-solid fa-lightbulb"></i>
+          </div>
+          <h4>Innovación</h4>
+        </div>
+        
+        <div class="valor-item">
+          <div class="valor-icono">
+            <i class="fa-solid fa-people-group"></i>
+          </div>
+          <h4>Trabajo en Equipo</h4>
+        </div>
+        
+        <div class="valor-item">
+          <div class="valor-icono">
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <h4>Excelencia</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== FOOTER ======================== -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-info">
+        <h2>Información de contacto</h2>
+        <img src="../Imagenes/logoClinaid.png" alt="Logo de la empresa" class="footer-logo">
+        <p><strong>Teléfono:</strong> (608)5152209 – 3244805510</p>
+        <p><strong>Correo:</strong> contacto@clinaid.com.co</p>
+        <p><strong>Dirección:</strong> Cra. 4B n 32-13 Plazoleta Fenalco B/ Cadiz – Ibagué, Tolima</p>
+
+        <div class="footer-social">
+          <a href="https://www.facebook.com/p/Clinaid-61566122693156/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/clinaid_/?hl=es" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.youtube.com/@CCLINAID" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://www.tiktok.com/@clinaid_" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-map">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7955.716861873345!2d-75.23010790642091!3d4.437447199999993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e38c5158fe5ec5b%3A0xc3b2ca6e7bc9c339!2sCLINAID%20Clinica%20de%20atenci%C3%B3n%20integral%20del%20dolor!5e0!3m2!1ses!2sco!4v1762050843963!5m2!1ses!2sco" 
+          width="100%" height="50%" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
+      </div>
+    </div>
+
+    <p>© 2025 - <span id="year"></span> CLINAID. Todos los derechos reservados.</p>
+  </footer>
+
+  <button id="btn-top" aria-label="Volver arriba">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <script src="../JS/sobreNosotros.js"></script>
+</body>
+</html>

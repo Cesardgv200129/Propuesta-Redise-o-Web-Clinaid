@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Testimonios - CLINAID</title>
+  
+  <!-- FontAwesome CDN para iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- CSS principal de la página de testimonios -->
+  <link rel="stylesheet" href="../CSS/testimonios.css">
+</head>
+
+<body>
+  <!-- ======================== HEADER ======================== -->
+  <!-- Encabezado sticky con logo, buscador y navegación -->
+  <header class="site-header">
+    <div class="header-inner">
+      <!-- Logo de la empresa -->
+      <div class="logo">
+        <a href="../HTML/index.html"><img src="../Imagenes/logoClinaid.png" alt="Logo CLINAID" class="logo-img"></a>
+      </div>
+
+            <!-- BARRA DE BÚSQUEDA -->
+      <div class="search" id="search-wrapper">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Buscar..."
+          aria-label="Buscar"
+          aria-autocomplete="list"
+          aria-controls="search-suggestions"
+          aria-expanded="false"
+          autocomplete="off"
+        >
+        
+        <button id="search-btn" aria-label="Buscar">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+
+        <!-- Lista de sugerencias -->
+        <ul id="search-suggestions" role="listbox" class="suggestions"></ul>
+      </div>
+
+
+      <!-- Botón de menú móvil (hamburguesa) -->
+      <div class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+
+      <!-- Navegación principal -->
+      <nav class="nav" id="nav">
+        <ul>
+          <li><a href="../HTML/index.html" class="nav-link">Inicio</a></li>
+          <li><a href="../HTML/sobreNosotros.html" class="nav-link">Sobre Nosotros</a></li>
+          <li><a href="../HTML/testimonios.html" class="nav-link">Testimonios</a></li>
+          <li><a href="../HTML/servicios.html" class="nav-link">Servicios</a></li>
+          <li><a href="../HTML/index.html#contactanos" class="nav-link">Contáctanos</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ======================== BANNER TESTIMONIOS ======================== -->
+  <!-- Banner hero con imagen de fondo y texto motivacional -->
+  <section class="hero-testimonios">
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <h1>Historias que Inspiran</h1>
+        <p>Pacientes que confiaron en nosotros y cuentan su experiencia</p>
+      </div>
+    </div>
+  </section>
+
+   <!-- ======================== SECCIÓN: TESTIMONIOS EN VIDEO ======================== -->
+  <section class="section-videos">
+    <div class="container">
+      <div class="section-header">
+        <p class="subtitulo">Voces Reales</p>
+        <h2>Testimonios en Video</h2>
+        <p class="descripcion">Conoce las experiencias directas de nuestros pacientes</p>
+      </div>
+
+      <!-- Contenedor del carrusel -->
+      <div class="carousel-wrapper">
+        <div class="autoplay-help" id="autoplay-help">
+            <i class="fa-solid fa-circle-info"></i> Haz clic en cualquier parte para activar los videos.
+        </div>
+        <div class="carousel-controls">
+          <button id="btn-mute" class="btn-mute" title="Silenciar">
+            <i class="fa-solid fa-volume-high"></i>
+          </button>
+        </div>
+
+        <div class="carousel-slider" id="video-carousel">
+          <div class="slider-item">
+            <video src="../Videos/1.mp4" playsinline></video>
+          </div>
+          <div class="slider-item">
+            <video src="../Videos/2.mp4" playsinline></video>
+          </div>
+          <div class="slider-item">
+            <video src="../Videos/3.mp4" playsinline></video>
+          </div>
+          <div class="slider-item">
+            <video src="../Videos/4.mp4" playsinline></video>
+          </div>
+        </div>
+
+        <ul class="indicators custom-indicators"></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== SECCIÓN: ENVIAR TESTIMONIO Y CALIFICACIÓN ======================== -->
+  <!-- Sección combinada: formulario a la izquierda y calificación global a la derecha -->
+  <section class="section-form-calificacion">
+    <div class="container">
+      <!-- Encabezado de la sección -->
+      <div class="section-header">
+        <p class="subtitulo">Únete a Nuestra Comunidad</p>
+        <h2>Comparte tu Experiencia</h2>
+        <p class="descripcion">Tu testimonio puede inspirar a otros a dar el primer paso</p>
+      </div>
+
+      <!-- Contenedor flex para formulario y calificación global lado a lado -->
+      <div class="form-calificacion-wrapper">
+        <!-- FORMULARIO DE TESTIMONIO (Izquierda) -->
+        <form id="testimonial-form" class="testimonial-form">
+          <!-- Campo: Nombre completo -->
+          <div class="form-group">
+            <label for="nombre">Nombre completo</label>
+            <input type="text" id="nombre" name="nombre" required>
+          </div>
+
+          <!-- Campo: Calificación con estrellas en fila horizontal -->
+          <div class="form-group">
+            <label for="calificacion">Calificación del servicio</label>
+            <div class="rating" id="rating">
+              <!-- Sistema de rating invertido (5 a 1) para efecto hover correcto -->
+              <input type="radio" id="star5" name="calificacion" value="5"><label for="star5" title="5 estrellas">★</label> 
+              <input type="radio" id="star4" name="calificacion" value="4"><label for="star4" title="4 estrellas">★</label>
+              <input type="radio" id="star3" name="calificacion" value="3"><label for="star3" title="3 estrellas">★</label>
+              <input type="radio" id="star2" name="calificacion" value="2"><label for="star2" title="2 estrellas">★</label>
+              <input type="radio" id="star1" name="calificacion" value="1"><label for="star1" title="1 estrella">★</label>
+            </div>
+          </div>
+
+          <!-- Campo: Mensaje del testimonio -->
+          <div class="form-group">
+            <label for="mensaje">Cuéntanos tu experiencia</label>
+            <textarea id="mensaje" name="mensaje" rows="5" placeholder="Describe cómo fue tu atención en CLINAID..." required></textarea>
+          </div>
+
+          <!-- Botón de envío -->
+          <button type="submit" class="btn-submit">
+            <i class="fa-solid fa-paper-plane"></i> Publicar Testimonio
+          </button>
+        </form>
+
+        <!-- CALIFICACIÓN GLOBAL (Derecha) -->
+        <div class="calificacion-global-container">
+          <!-- Calificación promedio con estrellas -->
+          <div class="calificacion-global">
+            <div class="calificacion-numero" id="calificacion-promedio">—</div>
+            <div class="calificacion-estrellas" id="estrellas-promedio"></div>
+            <p class="calificacion-total" id="total-testimonios">Basado en <span>0</span> testimonios</p>
+          </div>
+
+          <!-- Distribución de calificaciones por estrella (gráfico de barras) -->
+          <div class="distribucion-estrellas" id="distribucion-estrellas">
+            <!-- Se generará dinámicamente con JavaScript -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== SECCIÓN: TESTIMONIOS PUBLICADOS ======================== -->
+  <!-- Grid de tarjetas con todos los testimonios guardados -->
+  <section class="section-testimonios">
+    <div class="container">
+      <!-- Encabezado de la sección -->
+      <div class="section-header">
+        <p class="subtitulo">Confianza Compartida</p>
+        <h2>Testimonios de Nuestros Pacientes</h2>
+        <p class="descripcion">Historias reales de quienes han encontrado alivio con nosotros</p>
+      </div>
+
+      <!-- Grid de testimonios (se llena dinámicamente) -->
+      <div class="testimonios-grid" id="testimonios-grid">
+        <!-- Mensaje inicial cuando no hay testimonios -->
+        <div class="testimonio-vacio">
+          <i class="fa-regular fa-comment-dots"></i>
+          <p>Aún no hay testimonios. ¡Sé el primero en compartir tu experiencia!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== FOOTER ======================== -->
+  <!-- Pie de página con información de contacto y mapa -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <!-- Información de contacto y redes sociales -->
+      <div class="footer-info">
+        <h2>Información de contacto</h2>
+        <img src="../Imagenes/logoClinaid.png" alt="Logo de la empresa" class="footer-logo">
+        <p><strong>Teléfono:</strong> (608)5152209 – 3244805510</p>
+        <p><strong>Correo:</strong> contacto@clinaid.com.co</p>
+        <p><strong>Dirección:</strong> Cra. 4B n 32-13 Plazoleta Fenalco B/ Cadiz – Ibagué, Tolima</p>
+
+        <!-- Íconos de redes sociales -->
+        <div class="footer-social">
+          <a href="https://www.facebook.com/p/Clinaid-61566122693156/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/clinaid_/?hl=es" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.youtube.com/@CCLINAID" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://www.tiktok.com/@clinaid_" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+      </div>
+
+      <!-- Mapa de ubicación -->
+      <div class="footer-map">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7955.716861873345!2d-75.23010790642091!3d4.437447199999993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e38c5158fe5ec5b%3A0xc3b2ca6e7bc9c339!2sCLINAID%20Clinica%20de%20atenci%C3%B3n%20integral%20del%20dolor!5e0!3m2!1ses!2sco!4v1762050843963!5m2!1ses!2sco" 
+          width="100%" height="50%" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
+      </div>
+    </div>
+    <!-- Copyright dinámico -->
+    <p>© 2025 - <span id="year"></span> CLINAID. Todos los derechos reservados.</p>
+  </footer>
+
+  <button id="btn-top" aria-label="Volver arriba">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <!-- Librerías externas para el carrusel -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/micro-slider@1.0.9/dist/micro-slider.min.js"></script>
+  
+  <!-- JavaScript principal de la página -->
+  <script src="../JS/testimonios.js"></script>
+</body>
+</html>

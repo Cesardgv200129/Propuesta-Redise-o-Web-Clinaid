@@ -1,0 +1,1056 @@
+/* ==========================================================
+   RESET Y VARIABLES
+   ========================================================== */
+/* Reset básico para eliminar márgenes y padding por defecto */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Variables CSS para colores y medidas reutilizables */
+:root {
+  --primary: #0275d8;           /* Azul principal */
+  --otroazuk: #0389ff;
+  --secondary: #7B5BA6;         /* Morado secundario */
+  --light-blue: #DBECFF;        /* Azul claro para fondos */
+  --light-purple: #E8D9FF;      /* Morado claro */
+  --dark-blue: #084c6f;         /* Azul oscuro para textos */
+  --blueblue: #89d8ff; 
+  --header-height: 76px;        /* Altura fija del header */
+  --radius: 12px;               /* Radio de borde estándar */
+  --card-shadow: 0 6px 20px rgba(10, 30, 60, 0.08); /* Sombra para tarjetas */
+}
+
+/* Estilos base del documento */
+html, body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* ==========================================================
+   HEADER
+   ========================================================== */
+/* Header sticky que permanece en la parte superior al hacer scroll */
+.site-header {
+  /* Fondo multicolor invertido */
+  background: #6ba0e9;
+
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+/* Contenedor interno del header con flexbox */
+.header-inner {
+  max-width: 1150px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  height: var(--header-height);
+  padding: 0 16px;
+}
+
+/* Logo de la empresa */
+.logo img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  border-radius: 8px;
+  padding: 6px;
+}
+
+/* Barra de búsqueda */
+.search {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 1 1 360px;
+  max-width: 480px;
+  justify-content: center;
+}
+
+/* ---------- Barra de búsqueda ---------- */
+.search { 
+  display: flex; 
+  align-items: center; 
+  gap: 6px; 
+  flex: 1 1 360px; 
+  max-width: 480px; 
+  justify-content: center; 
+  position: relative; /* NECESARIO para las sugerencias */
+}
+
+.search input {
+  width: 100%;
+  max-width: 420px;
+  padding: 10px 12px;
+  border-radius: 22px;
+  border: 1px solid rgba(0,0,0,0.12);
+  outline: none;
+}
+
+.search button {
+  background: transparent;
+  border: none;
+  font-size: 1.05rem;
+  cursor: pointer;
+  color: #084c6f;
+  transition: all 0.2s ease;
+}
+
+.search button:hover {
+  transform: scale(1.1);
+  color: #0275d8;
+}
+
+/* ---------- Lista de sugerencias ---------- */
+.suggestions {
+  position: absolute;
+  top: 46px;
+  left: 0;
+  width: 100%;
+  background: white;
+  list-style: none;
+  border-radius: 10px;
+  padding: 0;
+  margin: 4px 0 0 0;
+  max-height: 220px;
+  overflow-y: auto;
+  border: 1px solid rgba(0,0,0,0.15);
+  display: none; /* Oculto por defecto */
+  z-index: 50;
+}
+
+.suggestions.active {
+  display: block;
+}
+
+.suggestions li {
+  padding: 10px 14px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.suggestions li:hover {
+  background: #f1f7ff;
+}
+
+
+
+/* Menú de navegación horizontal */
+.nav ul {
+  display: flex;
+  list-style: none;
+  gap: 18px;
+  align-items: center;
+}
+
+/* Enlaces del menú con efecto hover */
+.nav a {
+  text-decoration: none;
+  color: white;
+  padding: 8px 10px;
+  border-radius: 8px;
+  transition: all .18s ease;
+}
+
+.nav a:hover {
+  background: rgba(8,76,111,0.08);
+  transform: translateY(-2px);
+  color: white;
+}
+
+/* Botón hamburguesa para menú móvil (oculto por defecto) */
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 6px;
+  color: var(--dark-blue);
+}
+
+/* ==========================================================
+   BANNER TESTIMONIOS
+   ========================================================== */
+/* Banner hero con imagen de fondo y overlay oscuro */
+.hero-testimonios {
+  position: relative;
+  background-image: url("../Imagenes/bannertes2.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 6vw;
+  margin-top: 0;
+}
+
+/* Overlay oscuro sobre la imagen de fondo */
+.hero-testimonios::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(2, 9, 23, 0.45);
+  z-index: 1;
+}
+
+/* Contenido del banner (título y subtítulo) */
+.hero-testimonios .hero-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  padding: 2rem;
+  max-width: 700px;
+}
+
+/* Título principal del banner con tamaño responsivo */
+.hero-testimonios .hero-content h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: 1rem;
+  font-weight: 700;
+  text-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  white-space: nowrap; /* Evita que el texto haga salto de línea */
+}
+
+/* Subtítulo del banner */
+.hero-testimonios .hero-content p {
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  max-width: 90%;
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* Móviles grandes */
+@media (max-width: 768px) {
+  .hero-testimonios {
+    padding-left: 3vw;
+    min-height: 30vh;
+    justify-content: center; /* Centra contenido en pantallas pequeñas */
+    text-align: center;
+  }
+
+  .hero-testimonios .hero-content {
+    padding: 1.5rem;
+    max-width: 90%;
+  }
+
+  .hero-testimonios .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-testimonios .hero-content p {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+  .hero-testimonios {
+    min-height: 28vh;
+    padding-left: 0;
+  }
+
+  .hero-testimonios .hero-content h1 {
+    font-size: 1.7rem;
+  }
+
+  .hero-testimonios .hero-content p {
+    font-size: 0.9rem;
+  }
+}
+
+/* ==========================================================
+   SECCIÓN COMÚN
+   ========================================================== */
+/* Contenedor principal con ancho máximo */
+.container {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Encabezados de sección centrados */
+.section-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+/* Subtítulo en mayúsculas con espaciado de letras */
+.section-header .subtitulo {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--dark-blue); /* ← CAMBIAR AQUÍ */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+}
+
+/* Título principal de sección */
+.section-header h2 {
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  color: var(--dark-blue);
+  font-weight: 700;
+  margin: 0;
+  position: relative;
+}
+
+/* Línea decorativa debajo del título */
+.section-header h2::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--secondary);
+  border-radius: 2px;
+}
+
+/* Descripción de la sección */
+.section-header .descripcion {
+  color: var(--dark-blue); /* ← CAMBIAR AQUÍ */
+  margin-top: 1rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-videos .section-header .subtitulo,
+.section-videos .section-header h2,
+.section-videos .section-header .descripcion {
+  color: var(--dark-blue);
+}
+
+
+/* ==========================================================
+   SECCIÓN: VIDEOS — AJUSTADA (más compacta)
+   ========================================================== */
+.section-videos {
+  padding: 3.5rem 0;
+  background-color: #fbfdff;
+  color: var(--dark-blue); /* ← CAMBIAR AQUI */
+
+}
+
+
+.section-videos .section-header h2::after {
+  background: var(--secondary);
+  opacity: 0.6;
+}
+
+.carousel-wrapper {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  height: 520px; /* ✅ REDUCIDO: 600px → 520px */
+}
+
+.carousel-controls {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 10;
+}
+
+.btn-mute {
+  background: rgba(0, 0, 0, 0.2);
+  border: none;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  color: var(--dark-blue);
+  font-size: 1.15rem;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition: all 0.2s;
+}
+
+.btn-mute:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+.carousel-slider {
+  height: 100%;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.slider-item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 320px;   /* ✅ REDUCIDO: 360px → 320px */
+  height: 480px;  /* ✅ 2:3 → 320×480 */
+  transform: translate(-50%, -50%);
+  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
+  background: #000;
+  opacity: 0.4;
+  z-index: 1;
+}
+
+.slider-item.active {
+  transform: translate(-50%, -50%) scale(1.03);
+  opacity: 1;
+  z-index: 3;
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.45);
+}
+
+.slider-item.prev {
+  transform: translate(calc(-50% - 260px), -50%) scale(0.88);
+  opacity: 0.4;
+  z-index: 2;
+}
+
+.slider-item.next {
+  transform: translate(calc(-50% + 260px), -50%) scale(0.88);
+  opacity: 0.4;
+  z-index: 2;
+}
+
+.slider-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Indicadores (abajo, centrados) */
+.custom-indicators {
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  z-index: 5;
+}
+
+.custom-indicators li {
+  width: 12px;
+  height: 12px;
+}
+
+.custom-indicators button {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--dark-blue);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.custom-indicators .active button {
+  background: var(--dark-blue);
+  transform: scale(1.25);
+}
+
+/* ==========================================================
+   RESPONSIVE — VIDEOS
+   ========================================================== */
+@media (max-width: 900px) {
+  .carousel-wrapper {
+    height: 440px; /* ✅ REDUCIDO */
+  }
+
+  .slider-item {
+    width: 280px;
+    height: 420px;
+  }
+
+  .slider-item.prev {
+    transform: translate(calc(-50% - 200px), -50%) scale(0.82);
+  }
+
+  .slider-item.next {
+    transform: translate(calc(-50% + 200px), -50%) scale(0.82);
+  }
+}
+
+@media (max-width: 600px) {
+  .carousel-wrapper {
+    height: 360px; /* ✅ REDUCIDO */
+  }
+
+  .slider-item {
+    width: 240px;
+    height: 360px;
+  }
+
+  .slider-item.prev {
+    transform: translate(calc(-50% - 140px), -50%) scale(0.78);
+  }
+
+  .slider-item.next {
+    transform: translate(calc(-50% + 140px), -50%) scale(0.78);
+  }
+
+  .btn-mute {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+
+  .custom-indicators {
+    bottom: 14px;
+    gap: 6px;
+  }
+
+  .custom-indicators li {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+/* ==========================================================
+   SECCIÓN: FORMULARIO Y CALIFICACIÓN GLOBAL
+   ========================================================== */
+/* Sección que contiene formulario y calificación lado a lado */
+.section-form-calificacion {
+  padding: 5rem 0;
+  background-color: #F7F9FC;
+}
+
+/* Contenedor flex para posicionar elementos horizontalmente */
+.form-calificacion-wrapper {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+/* Formulario de testimonios (lado izquierdo) */
+.testimonial-form {
+  flex: 1 1 60%;
+  background: white;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: var(--card-shadow);
+}
+
+/* Cada grupo de campo del formulario */
+.form-group {
+  margin-bottom: 1.8rem;
+}
+
+/* Etiquetas de los campos */
+.form-group label {
+  display: block;
+  margin-bottom: 0.6rem;
+  font-weight: 600;
+  color: var(--dark-blue);
+}
+
+/* Inputs y textareas del formulario */
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+/* Estado focus de inputs */
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(2, 117, 216, 0.15);
+}
+
+/* Sistema de rating con estrellas en fila horizontal */
+.rating {
+  direction: rtl; /* Dirección invertida para efecto de hover correcto */
+  unicode-bidi: bidi-override;
+  display: inline-flex; /* Flex para mantener estrellas en línea */
+  font-size: 2.2rem;
+  gap: 4px; /* Espaciado entre estrellas */
+}
+
+/* Ocultar inputs radio del rating */
+.rating input {
+  display: none;
+}
+
+/* Estrellas por defecto (grises) */
+.rating label {
+  color: #ddd;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+/* Estrellas seleccionadas y hover (doradas) */
+.rating input:checked ~ label,
+.rating label:hover,
+.rating label:hover ~ label {
+  color: #FFD700;
+}
+
+/* Botón de envío del formulario con gradiente */
+.btn-submit {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 10px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center; /* Centra verticalmente */
+  justify-content: center; /* Centra horizontalmente */
+  gap: 8px;
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+
+/* Efecto hover del botón de envío */
+.btn-submit:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(2, 117, 216, 0.4);
+}
+
+/* ==========================================================
+   CALIFICACIÓN GLOBAL (Lado derecho del formulario)
+   ========================================================== */
+/* Contenedor de calificación global más compacto */
+.calificacion-global-container {
+  flex: 1 1 35%;
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: var(--card-shadow);
+}
+
+/* Sección superior con promedio */
+.calificacion-global {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+/* Número del promedio grande */
+.calificacion-numero {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+/* Estrellas del promedio */
+.calificacion-estrellas {
+  font-size: 1.8rem;
+  color: #FFD700;
+  margin: 0.5rem 0;
+  height: 1.2em;
+}
+
+/* Texto de total de testimonios */
+.calificacion-total {
+  color: #555;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+/* Distribución de estrellas (gráfico de barras) */
+.distribucion-estrellas {
+  width: 100%;
+}
+
+/* Título de la distribución */
+.distribucion-estrellas h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--dark-blue);
+  font-size: 1.1rem;
+}
+
+/* Cada barra de estrella */
+.barra-estrella {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.8rem;
+  gap: 10px;
+}
+
+.barra-estrella:last-child {
+  margin-bottom: 0;
+}
+
+/* Label de la barra (ej: 5★) */
+.barra-estrella .label {
+  width: 28px;
+  font-weight: 600;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+/* Contenedor de la barra de progreso */
+.barra-estrella .barra {
+  flex: 1;
+  height: 8px;
+  background: #e9ecef;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* Progreso de la barra (parte coloreada) */
+.barra-estrella .progreso {
+  height: 100%;
+  background: var(--primary);
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+/* Porcentaje al final de la barra */
+.barra-estrella .porcentaje {
+  width: 35px;
+  text-align: right;
+  font-size: 0.8rem;
+  color: #6c757d;
+}
+
+/* ==========================================================
+   SECCIÓN: TESTIMONIOS PUBLICADOS
+   ========================================================== */
+/* Sección con grid de tarjetas de testimonios */
+.section-testimonios {
+  padding: 5rem 0;
+  background-color: #fbfdff;
+}
+
+/* Grid responsivo de testimonios */
+.testimonios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+/* Cada tarjeta de testimonio */
+.testimonio-card {
+  background: white;
+  border-radius: 14px;
+  padding: 1.8rem;
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s ease;
+  border-top: 4px solid var(--primary);
+}
+
+/* Efecto hover en tarjetas */
+.testimonio-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(10, 30, 60, 0.12);
+}
+
+/* Header de cada testimonio con nombre y fecha */
+.testimonio-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+/* Nombre del autor */
+.testimonio-nombre {
+  font-weight: 700;
+  color: var(--dark-blue);
+  font-size: 1.2rem;
+}
+
+/* Fecha de publicación */
+.testimonio-fecha {
+  color: #777;
+  font-size: 0.85rem;
+}
+
+/* Estrellas de calificación en cada tarjeta */
+.testimonio-estrellas {
+  color: #FFD700;
+  font-size: 1.1rem;
+  margin: 0.4rem 0;
+}
+
+/* Mensaje del testimonio en cursiva */
+.testimonio-mensaje {
+  color: #333;
+  line-height: 1.7;
+  font-style: italic;
+}
+
+/* Mensaje cuando no hay testimonios */
+.testimonio-vacio {
+  text-align: center;
+  padding: 3rem;
+  grid-column: 1 / -1;
+  color: #777;
+}
+
+/* Icono del mensaje vacío */
+.testimonio-vacio i {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #e0e0e0;
+}
+
+/* ==========================================================
+   FOOTER
+   ========================================================== */
+.site-footer { 
+  background: #0b2330; 
+  color: #0782ee; 
+  text-align: center; 
+  padding: 2rem 1rem; 
+}
+
+.footer-container {
+  max-width: 1150px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer-info {
+  text-align: left;
+}
+
+.footer-info h2 {
+  color: #0782ee;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.footer-logo {
+  width: 120px;
+  margin-bottom: 1rem;
+  background: white;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.footer-info p {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.footer-social {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.footer-social a {
+  width: 40px;
+  height: 40px;
+  background: rgba(7, 130, 238, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0782ee;
+  transition: all 0.3s ease;
+}
+
+.footer-social a:hover {
+  background: #0782ee;
+  color: white;
+  transform: translateY(-3px);
+}
+
+.footer-map iframe {
+  border-radius: 12px;
+  width: 100%;
+  height: 250px;
+}
+
+.site-footer > p {
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(7, 130, 238, 0.3);
+}
+
+/* ==========================================================
+   RESPONSIVE
+   ========================================================== */
+/* Tablet y dispositivos medianos */
+@media (max-width: 768px) {
+  /* Banner más pequeño en móviles */
+  .hero-testimonios {
+    padding-left: 4vw;
+    min-height: 35vh;
+  }
+
+  /* Carrusel más pequeño */
+  .carousel-slider {
+    height: 380px;
+  }
+
+  .slider-item {
+    width: 320px;
+  }
+
+  /* Formulario con menos padding */
+  .testimonial-form {
+    padding: 1.8rem;
+  }
+
+  /* Formulario y calificación en columna */
+  .form-calificacion-wrapper {
+    flex-direction: column;
+  }
+
+  .testimonial-form,
+  .calificacion-global-container {
+    flex: 1 1 100%;
+  }
+
+  /* Grid de una columna */
+  .testimonios-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Footer en una columna */
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Móviles pequeños */
+@media (max-width: 600px) {
+  /* Mostrar menú hamburguesa */
+  .menu-toggle { 
+    display: block; 
+  }
+  
+  /* Menú desplegable */
+  .nav { 
+    position: absolute; 
+    top: var(--header-height); 
+    right: 12px; 
+    background: #6ba0e9;
+    border-radius: 12px; 
+    box-shadow: 0 12px 30px rgba(10,30,60,0.12); 
+    display: none; 
+    width: 88%; 
+    max-width: 320px; 
+  }
+  
+  /* Menú abierto */
+  .nav.open { 
+    display: block; 
+  }
+  
+  /* Links en columna */
+  .nav ul { 
+    flex-direction: column; 
+    padding: 10px; 
+  }
+  
+  .nav a { 
+    display: block; 
+    padding: 10px 14px; 
+  }
+
+  /* Carrusel aún más pequeño */
+  .carousel-slider {
+    height: 350px;
+  }
+
+  .slider-item {
+    width: 280px;
+  }
+
+  /* Número de calificación más pequeño */
+  .calificacion-numero {
+    font-size: 2.5rem;
+  }
+
+  /* Estrellas del rating más pequeñas en móvil */
+  .rating {
+    font-size: 1.8rem;
+  }
+}
+
+.autoplay-help {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.6);
+  color: white;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  z-index: 5;
+  animation: fadeOut 4s forwards 2s;
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; visibility: hidden; }
+}
+
+/* Botón "Volver Arriba" */
+#btn-top {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: none;
+  background: #084c6f; /* color acorde a tu menú */
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  z-index: 9999;
+}
+
+#btn-top:hover {
+  background: #0275d8;
+  transform: scale(1.05);
+}
+
+/* Mostrar botón cuando se activa */
+#btn-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}

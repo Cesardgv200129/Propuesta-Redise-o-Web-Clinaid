@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CLINAID - Tu Bienestar en Nuestras Manos</title>
+  
+  <!-- FontAwesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- CSS principal -->
+  <link rel="stylesheet" href="../CSS/index.css">
+</head>
+
+<body>
+  <!-- ======================== HEADER ======================== -->
+  <header class="site-header">
+    <div class="header-inner">
+      
+      <!-- LOGO DE LA CLÍNICA -->
+      <div class="logo">
+        <a href="../HTML/index.html"><img src="../Imagenes/logoClinaid.png" alt="Logo CLINAID" class="logo-img"></a>
+      </div>
+
+            
+            <!-- BARRA DE BÚSQUEDA -->
+      <div class="search" id="search-wrapper">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Buscar..."
+          aria-label="Buscar"
+          aria-autocomplete="list"
+          aria-controls="search-suggestions"
+          aria-expanded="false"
+          autocomplete="off"
+        >
+        
+        <button id="search-btn" aria-label="Buscar">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+
+        <!-- Lista de sugerencias -->
+        <ul id="search-suggestions" role="listbox" class="suggestions"></ul>
+      </div>
+
+
+      <!-- BOTÓN DE MENÚ -->
+      <div class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+
+      <!-- MENÚ DE NAVEGACIÓN PRINCIPAL -->
+      <nav class="nav" id="nav">
+        <ul>
+          <li><a href="../HTML/index.html" class="nav-link">Inicio</a></li>
+          <li><a href="../HTML/sobreNosotros.html" class="nav-link">Sobre Nosotros</a></li>
+          <li><a href="../HTML/testimonios.html" class="nav-link">Testimonios</a></li>
+          <li><a href="../HTML/servicios.html" class="nav-link">Servicios</a></li>
+          <li><a href="#contactanos" class="nav-link">Contáctanos</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ======================== SECCIÓN HERO / BANNER ======================== -->
+  <section id="inicio" class="hero" aria-label="Banner principal">
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <h2>Tu Bienestar en Nuestras Manos</h2>
+        <p>
+          En nuestra IPS especializada en dolor y cuidado paliativo, nos dedicamos plenamente 
+          a mejorar la calidad de vida de nuestros pacientes enfrentando enfermedades crónicas 
+          y terminales.
+        </p>
+        <a class="btn btn-primary" href="../HTML/sobreNosotros.html">Más Sobre Nosotros</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== SECCIÓN ALIADOS ======================== -->
+  <section class="seccion-aliados">
+    <h2 class="titulo-aliados">Nuestros Aliados</h2>
+    
+    <div class="carrusel-wrapper">
+      <!-- Botón anterior -->
+      <button class="carrusel-btn btn-anterior" id="btnAnterior">
+        <span><i class="fa-solid fa-chevron-left"></i></span>
+      </button>
+
+      <!-- Contenedor del carrusel -->
+      <div class="carrusel-container">
+        <div class="carrusel-track" id="carruselTrack">
+          <!-- Logos originales -->
+          <div class="carrusel-item">
+            <div class="logo-box">
+              <a href="https://www.epssanitas.com/usuarios/web/nuevo-portal-eps#gsc.tab=0" target="_blank" rel="noopener noreferrer">
+                <img src="../Imagenes/epsSanitasLogo.png" class="aliado-logo" alt="EPS Sanitas">
+              </a>
+            </div>
+          </div>
+          <div class="carrusel-item">
+            <div class="logo-box">
+              <a href="https://www.fomag.gov.co/" target="_blank" rel="noopener noreferrer">
+                <img src="../Imagenes/fomagLogo.png" class="aliado-logo" alt="Fomag">
+              </a>
+            </div>
+          </div>
+          <div class="carrusel-item">
+            <div class="logo-box">
+              <a href="https://www.colmedica.com/Paginas/Home.aspx" target="_blank" rel="noopener noreferrer">
+                <img src="../Imagenes/colmedicaLogo.png" class="aliado-logo" alt="Colmedica">
+              </a>
+            </div>
+          </div>
+          <div class="carrusel-item">
+            <div class="logo-box">
+              <a href="https://www.allianz.co/seguros/personas/salud.html?gad_source=1#formulario?utm_source=google&utm_medium=search&utm_campaign=always-on&utm_term=cpc&utm_content=allianz-salud" target="_blank" rel="noopener noreferrer">
+                <img src="../Imagenes/allianzLogo.png" class="aliado-logo" alt="Allianz">
+              </a>
+            </div>
+          </div>
+          <div class="carrusel-item">
+            <div class="logo-box">
+              <a href="https://www.epssura.com/" target="_blank" rel="noopener noreferrer">
+                <img src="../Imagenes/grupoSuraLogo.png" class="aliado-logo" alt="Grupo Sura">
+              </a>
+            </div>
+          </div>
+          <div class="carrusel-item">
+            <div class="logo-box">
+              <a href="https://www.colsanitas.com/" target="_blank" rel="noopener noreferrer">
+                <img src="../Imagenes/colsanitasLogo.png" class="aliado-logo" alt="Colsanitas">
+              </a>
+            </div>
+          </div>
+          <div class="carrusel-item">
+            <div class="logo-box">
+              <a href="https://saludtotal.com.co/" target="_blank" rel="noopener noreferrer">
+                <img src="../Imagenes/saludTotalLogo.png" class="aliado-logo" alt="Salud Total">
+              </a>
+            </div>
+          </div>
+
+          <!-- Logos duplicados para efecto infinito -->
+          <div class="carrusel-item">
+            <div class="logo-box">
+              <a href="https://www.epssanitas.com/usuarios/web/nuevo-portal-eps#gsc.tab=0" target="_blank" rel="noopener noreferrer">
+                <img src="../Imagenes/epsSanitasLogo.png" class="aliado-logo" alt="EPS Sanitas">
+              </a>
+            </div>
+          </div>
+          <div class="carrusel-item">
+            <div class="logo-box">
+              <a href="https://www.fomag.gov.co/" target="_blank" rel="noopener noreferrer">
+                <img src="../Imagenes/fomagLogo.png" class="aliado-logo" alt="Fomag">
+              </a>
+            </div>
+          </div>
+          <div class="carrusel-item">
+            <div class="logo-box">
+              <a href="https://www.colmedica.com/Paginas/Home.aspx" target="_blank" rel="noopener noreferrer">
+                <img src="../Imagenes/colmedicaLogo.png" class="aliado-logo" alt="Colmedica">
+              </a>
+            </div>
+          </div>
+          <div class="carrusel-item">
+            <div class="logo-box">
+              <a href="https://www.allianz.co/seguros/personas/salud.html?gad_source=1#formulario?utm_source=google&utm_medium=search&utm_campaign=always-on&utm_term=cpc&utm_content=allianz-salud" target="_blank" rel="noopener noreferrer">
+                <img src="../Imagenes/allianzLogo.png" class="aliado-logo" alt="Allianz">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Botón siguiente -->
+      <button class="carrusel-btn btn-siguiente" id="btnSiguiente">
+        <span><i class="fa-solid fa-chevron-right"></i></span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ======================== SECCIÓN SERVICIOS / AGENDA ======================== -->
+  <section id="servicios" class="servicios">
+    <h2>Agenda Tu Cita y Visítanos</h2>
+
+    <div class="servicios-container">
+      <!-- Tarjeta 1: Agendar cita -->
+      <article class="servicio-card">
+        <div class="icono"><i class="fa-solid fa-calendar-check"></i></div>
+        <h3>Agendar Cita</h3>
+        <p>Solicita y confirma tu cita aquí de manera rápida.</p>
+        <a href="https://landbot.online/v3/H-3239926-UYNQLOYO7XOQQYPA/index.html" target="_blank" rel="noopener noreferrer"><button class="btn btn-outline">Solicitar</button></a>
+      </article>
+      
+      <!-- Tarjeta 2: Nuestros especialistas -->
+      <article class="servicio-card">
+        <div class="icono"><i class="fa-solid fa-user-doctor"></i></div>
+        <h3>Nuestros Especialistas</h3>
+        <p>Conoce a los especialistas dedicados a cuidar tu salud y aliviar tu dolor.</p>
+        <a href="../HTML/nuestrosEspecialistas.html" target="_parent" rel="noopener noreferrer"><button class="btn btn-outline">Ver Más</button></a>
+      </article>
+
+            <!-- Tarjeta 3: Servicios -->
+      <article class="servicio-card">
+        <div class="icono"><i class="fa-solid fa-briefcase-medical"></i></div>
+        <h3>Servicios</h3>
+        <p>Conoce los servicios que ofrecemos para tu bienestar.</p>
+        <a href="../HTML/servicios.html" target="_parent" rel="noopener noreferrer"><button class="btn btn-outline">Ver Más</button></a>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ======================== SECCIÓN: ¿POR QUÉ ELEGIR CLINAID? ======================== -->
+  <section id="porque-elegir" class="porque-elegir">
+    <div class="porque-elegir-container">
+      <div class="porque-elegir-texto">
+        <h2>¿Por Qué Elegir <span>CLINAID</span>?</h2>
+        <p class="intro">
+          En <strong>CLINAID</strong> creemos que cada paciente merece atención humana y personalizada.
+          Descubre nuestras principales razones:
+        </p>
+
+        <!-- Acordeón -->
+        <div class="acordeon">
+          <!-- Item 1 del acordeón -->
+          <div class="item">
+            <button class="acordeon-titulo">
+              <i class="fa-solid fa-heart"></i> Atención Integral y Compasiva
+            </button>
+            <div class="acordeon-contenido">
+              <p>
+                Brindamos un acompañamiento humano, cercano y profesional, enfocado en aliviar el sufrimiento físico y emocional de nuestros pacientes y sus familias.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 2 del acordeón -->
+          <div class="item">
+            <button class="acordeon-titulo">
+              <i class="fa-solid fa-stethoscope"></i> Tratamientos Personalizados
+            </button>
+            <div class="acordeon-contenido">
+              <p>
+                Nuestro equipo trabaja con dedicación y evidencia científica para ofrecer tratamientos adaptados a las necesidades individuales de cada persona.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 3 del acordeón -->
+          <div class="item">
+            <button class="acordeon-titulo">
+              <i class="fa-solid fa-handshake"></i> Ética y Respeto
+            </button>
+            <div class="acordeon-contenido">
+              <p>
+                Nos distinguimos por una ética de cuidado centrada en la dignidad, el respeto y la empatía, garantizando un apoyo continuo y humano durante todo el proceso de enfermedad.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 4 del acordeón -->
+          <div class="item">
+            <button class="acordeon-titulo">
+              <i class="fa-solid fa-leaf"></i> Nuestro Compromiso
+            </button>
+            <div class="acordeon-contenido">
+              <p>
+                En CLINAID, creemos que cada momento cuenta. Por eso acompañamos a nuestros pacientes con compromiso, sensibilidad y excelencia profesional.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="porque-elegir-imagen">
+        <img src="../Imagenes/fachada2.jpg" alt="Equipo CLINAID">
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== SECCIÓN: TU OPINIÓN Y CONTACTO IMPORTAN ======================== -->
+  <section id="opinion-contacto" class="opinion-contacto-section">
+    <h2 class="titulo-principal-seccion">Tu Opinión y Contacto Importan</h2>
+
+    <div class="opinion-contacto-container">
+      <!-- ===================== SUBSECCIÓN: TESTIMONIOS ===================== -->
+      <div class="testimonios-wrapper">
+        <h3 class="subtitulo-seccion">Testimonios</h3>
+
+        <!-- ESTADÍSTICAS DE SATISFACCIÓN -->
+        <div class="estadisticas-satisfaccion">
+          <div class="stat-item">
+            <div class="stat-numero">98%</div>
+            <div class="stat-texto">Pacientes Satisfechos</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-numero">4.9/5</div>
+            <div class="stat-texto">Calificación Promedio</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-numero">+15</div>
+            <div class="stat-texto">Años de Experiencia</div>
+          </div>
+        </div>
+
+        <!-- CARRUSEL DE TESTIMONIOS -->
+        <div class="carrusel-testimonios-wrapper">
+          <button class="testimonio-btn btn-prev" id="testimonioAnterior" aria-label="Testimonio anterior">
+            <span><i class="fa-solid fa-chevron-left"></i></span>
+          </button>
+
+          <div class="carrusel-testimonios-container">
+            <div class="carrusel-testimonios-track" id="testimoniosTrack">
+              <!-- TESTIMONIO 1 -->
+              <div class="testimonio-card">
+                <div class="testimonio-contenido">
+                  <div class="comillas">"</div>
+                  <p class="testimonio-texto">
+                    Excelente atención y profesionalismo. El equipo de CLINAID me ayudó a manejar mi dolor crónico con tratamientos personalizados. Ahora tengo una mejor calidad de vida.
+                  </p>
+                  <div class="testimonio-nombre">María González</div>
+                  <div class="testimonio-estrellas">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                </div>
+              </div>
+
+              <!-- TESTIMONIO 2 -->
+              <div class="testimonio-card">
+                <div class="testimonio-contenido">
+                  <div class="comillas">"</div>
+                  <p class="testimonio-texto">
+                    Me siento muy agradecido con todo el equipo. Su enfoque humano y compasivo hizo toda la diferencia durante mi tratamiento paliativo.
+                  </p>
+                  <div class="testimonio-nombre">Carlos Ramírez</div>
+                  <div class="testimonio-estrellas">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                </div>
+              </div>
+
+              <!-- TESTIMONIO 3 -->
+              <div class="testimonio-card">
+                <div class="testimonio-contenido">
+                  <div class="comillas">"</div>
+                  <p class="testimonio-texto">
+                    Llegué con mucho dolor y desconfianza, pero el trato tan cálido y profesional me devolvió la esperanza. Recomiendo CLINAID completamente.
+                  </p>
+                  <div class="testimonio-nombre">Ana Martínez</div>
+                  <div class="testimonio-estrellas">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                </div>
+              </div>
+
+              <!-- TESTIMONIO 4 -->
+              <div class="testimonio-card">
+                <div class="testimonio-contenido">
+                  <div class="comillas">"</div>
+                  <p class="testimonio-texto">
+                    Los especialistas son increíbles. Me explicaron cada paso del tratamiento y siempre estuvieron disponibles para resolver mis dudas.
+                  </p>
+                  <div class="testimonio-nombre">Jorge Herrera</div>
+                  <div class="testimonio-estrellas">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                </div>
+              </div>
+
+              <!-- TESTIMONIO 5 -->
+              <div class="testimonio-card">
+                <div class="testimonio-contenido">
+                  <div class="comillas">"</div>
+                  <p class="testimonio-texto">
+                    Mi experiencia fue maravillosa. Desde la recepción hasta los médicos, todos fueron muy amables y atentos. Me siento muy bien cuidada.
+                  </p>
+                  <div class="testimonio-nombre">Lucía Torres</div>
+                  <div class="testimonio-estrellas">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                </div>
+              </div>
+
+              <!-- TESTIMONIO 6 -->
+              <div class="testimonio-card">
+                <div class="testimonio-contenido">
+                  <div class="comillas">"</div>
+                  <p class="testimonio-texto">
+                    Después de visitar varios lugares, finalmente encontré en CLINAID el apoyo que necesitaba. Su enfoque integral cambió mi vida.
+                  </p>
+                  <div class="testimonio-nombre">Roberto Silva</div>
+                  <div class="testimonio-estrellas">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                </div>
+              </div>
+
+              <!-- TESTIMONIO 7 -->
+              <div class="testimonio-card">
+                
+                <div class="testimonio-contenido">
+                  <div class="comillas">"</div>
+                  <p class="testimonio-texto">
+                    Increíble servicio. No solo trataron mi dolor físico, sino que también me brindaron apoyo emocional. Un equipo verdaderamente excepcional.
+                  </p>
+                  <div class="testimonio-nombre">Patricia Mendoza</div>
+                  <div class="testimonio-estrellas">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button class="testimonio-btn btn-next" id="testimonioSiguiente" aria-label="Siguiente testimonio">
+            <span><i class="fa-solid fa-chevron-right"></i></span>
+          </button>
+        </div>
+
+        <!-- INDICADORES DE PUNTOS -->
+        <div class="testimonios-indicadores" id="testimoniosIndicadores"></div>
+
+        <!-- BOTÓN VER MÁS TESTIMONIOS -->
+        <div class="testimonios-boton-container">
+          <a href="../HTML/testimonios.html" target="_parent" rel="noopener noreferrer"><button class="btn btn-ver-testimonios">Ver Más Testimonios</button></a>
+        </div>
+      </div>
+
+      <!-- ===================== SUBSECCIÓN: CONTÁCTANOS ===================== -->
+      <div class="contactanos-wrapper">
+        <h3 class="subtitulo-seccion" id="contactanos">Contáctanos</h3>
+
+        <!-- INFORMACIÓN DE CONTACTO -->
+        <div class="contacto-info-grid">
+          <!-- Teléfonos -->
+          <div class="contacto-item">
+            <div class="contacto-icono"><i class="fa-solid fa-phone"></i></div>
+            <div class="contacto-detalle">
+              <h4>Llámanos</h4>
+              <p>(608) 5152209</p>
+            </div>
+          </div>
+
+          <!-- WhatsApp -->
+          <div class="contacto-item">
+            <div class="contacto-icono"><i class="fa-brands fa-whatsapp"></i></div>
+            <div class="contacto-detalle">
+              <h4>WhatsApp</h4>
+              <p>324 480 5510</p>
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="contacto-item">
+            <div class="contacto-icono"><i class="fa-solid fa-envelope"></i></div>
+            <div class="contacto-detalle">
+              <h4>Email</h4>
+              <p>contacto@clinaid.com.co</p>
+            </div>
+          </div>
+
+          <!-- Ubicación -->
+          <div class="contacto-item">
+            <div class="contacto-icono"><i class="fa-solid fa-location-dot"></i></div>
+            <div class="contacto-detalle">
+              <h4>Ubicación</h4>
+              <p>Cra. 4B n 32-13 Plazoleta Fenalco<br>B/ Cadiz – Ibagué</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- HORARIOS DE ATENCIÓN -->
+        <div class="horarios-atencion">
+          <h4 class="horarios-titulo"><i class="fa-solid fa-clock"></i> Horarios de Atención</h4>
+          <div class="horarios-lista">
+            <div class="horario-item">
+              <span class="dia">Lunes a Viernes:</span>
+              <span class="hora">7:00 a.m - 6:00 p.m</span>
+            </div>
+            <div class="horario-item">
+              <span class="dia">Sábado:</span>
+              <span class="hora">8:00 a.m - 12:00 p.m</span>
+            </div>
+            <div class="horario-item">
+              <span class="dia">Domingo:</span>
+              <span class="hora cerrado">Cerrado</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- REDES SOCIALES -->
+        <div class="redes-sociales">
+          <h4>Síguenos en Redes Sociales</h4>
+          <div class="redes-iconos">
+            <a href="https://www.facebook.com/p/Clinaid-61566122693156/" class="red-social facebook" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/clinaid_/?hl=es" class="red-social instagram" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-instagram"></i>
+            </a> 
+            <a href="https://www.youtube.com/@CCLINAID" class="red-social youtube" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+            <a href="https://www.tiktok.com/@clinaid_" class="red-social tiktok" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-tiktok"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- FAQ (PREGUNTAS FRECUENTES) -->
+        <div class="faq-section">
+          <h4 class="faq-titulo"><i class="fa-solid fa-circle-question"></i> Preguntas Frecuentes</h4>
+          
+          <div class="faq-acordeon">
+            <!-- FAQ 1 -->
+            <div class="faq-item">
+              <button class="faq-pregunta">
+                ¿Cómo puedo agendar una cita?
+              </button>
+              <div class="faq-respuesta">
+                <p>Puedes agendar tu cita llamando al (608) 5152209, por WhatsApp al 324 480 5510, o visitando nuestra sede directamente.</p>
+              </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="faq-item">
+              <button class="faq-pregunta">
+                ¿Atienden urgencias?
+              </button>
+              <div class="faq-respuesta">
+                <p>Sí, contamos con atención para urgencias relacionadas con el manejo del dolor. Llámanos para coordinar tu atención inmediata.</p>
+              </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="faq-item">
+              <button class="faq-pregunta">
+                ¿Qué EPS manejan?
+              </button>
+              <div class="faq-respuesta">
+                <p>Trabajamos con múltiples EPS incluyendo Sanitas, Fomag, Colmedica, Sura, Colsanitas, Salud Total, entre otras.</p>
+              </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="faq-item">
+              <button class="faq-pregunta">
+                ¿Realizan terapias domiciliarias?
+              </button>
+              <div class="faq-respuesta">
+                <p>Sí, ofrecemos servicios de atención domiciliaria para pacientes que requieren cuidados paliativos o tienen movilidad reducida.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== FOOTER ======================== -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-info">
+        <h2>Información de contacto</h2>
+        <img src="../Imagenes/logoClinaid.png" alt="Logo de la empresa" class="footer-logo">
+        <p><strong>Teléfono:</strong> (608)5152209 – 3244805510</p>
+        <p><strong>Correo:</strong> contacto@clinaid.com.co</p>
+        <p><strong>Dirección:</strong> Cra. 4B n 32-13 Plazoleta Fenalco B/ Cadiz – Ibagué, Tolima</p>
+
+        <div class="footer-social">
+          <a href="https://www.facebook.com/p/Clinaid-61566122693156/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/clinaid_/?hl=es" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.youtube.com/@CCLINAID" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://www.tiktok.com/@clinaid_" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-map">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7955.716861873345!2d-75.23010790642091!3d4.437447199999993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e38c5158fe5ec5b%3A0xc3b2ca6e7bc9c339!2sCLINAID%20Clinica%20de%20atenci%C3%B3n%20integral%20del%20dolor!5e0!3m2!1ses!2sco!4v1762050843963!5m2!1ses!2sco" 
+          width="100%" height="50%" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
+      </div>
+    </div>
+
+    <p>© 2025 - <span id="year"></span> CLINAID. Todos los derechos reservados.</p>
+  </footer>
+
+  <button id="btn-top" aria-label="Volver arriba">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <script src="../JS/index.js"></script>
+
+
+</body>
+</html>
